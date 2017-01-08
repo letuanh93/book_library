@@ -1,0 +1,27 @@
+<article class="row">
+  <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-0 hidden-xs">
+    <figure class="thumbnail">
+      <img class="img-responsive" src=<%= Settings.user.default_avatar %> />
+      <figcaption class="text-center">
+        <%= link_to comment.user_name, user_path(comment.user) %>
+      </figcaption>
+    </figure>
+  </div>
+  <div class="col-md-9 col-sm-9">
+    <div class="panel panel-default arrow left">
+      <div class="panel-heading right"><%= t "comment" %></div>
+      <div class="panel-body">
+        <header class="text-left">
+          <time class="comment-date"><i class="fa fa-clock-o"></i>
+            <%= l comment.created_at, format: :request_date %>
+          </time>
+        </header>
+        <div class="comment-post">
+          <p>
+            <%= comment.content %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

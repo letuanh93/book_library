@@ -1,0 +1,15 @@
+<tr>
+  <td><%= index_for publisher_counter , @publishers.current_page,
+    Settings.item_per_page %></td>
+  <td><%= publisher.name %></td>
+  <td><%= publisher.description %></td>
+  <td><%= publisher.email %></td>
+  <td>
+    <%= link_to edit_admin_publisher_path publisher do %>
+      <%= fa_icon "pencil" %>
+    <% end %>
+    <%= link_to [:admin, publisher], method: :delete, data: {confirm: t("delete.confirm")} do %>
+        <%= fa_icon "trash-o" %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,29 @@
+<% provide :title, t("authors_list") %>
+<h1><%= t "authors_list" %></h1>
+<%= form_tag admin_authors_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: t("search"),
+    class: "form-control search-field", autofocus: true %>
+<% end %>
+<%= button_to t("add_author"), new_admin_author_path, method: :get,
+  class: "btn btn-success" %>
+<%= link_to t("excel"), params.except(:host, :port, :protocol).permit!.
+  merge(format: "xlsx") %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "index" %></th>
+        <th><%= t "image" %></th>
+        <th><%= t "author_name" %></th>
+        <th><%= t "description" %></th>
+        <th><%= t "quantity" %>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @authors %>
+    </tbody>
+  </table>
+  </div>
+
+<%= will_paginate %>

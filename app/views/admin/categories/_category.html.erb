@@ -1,0 +1,15 @@
+<tr>
+  <td><%= index_for category_counter, @categories.current_page,
+    Settings.item_per_page %></td>
+  <td><%= link_to category.name, admin_category_path(category) %></td>
+  <td><%= category.description %></td>
+  <td><%= category.books.length %></td>
+  <td>
+    <%= link_to edit_admin_category_path category do %>
+      <%= fa_icon "pencil" %>
+    <% end %>
+    <%= link_to [:admin, category], method: :delete, data: {confirm: t("delete.confirm")} do %>
+        <%= fa_icon "trash-o" %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,28 @@
+<% provide :title, t("categories_list") %>
+<h1><%= t "categories_list" %></h1>
+<%= form_tag admin_categories_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: t("search"),
+    class: "form-control search-field", autofocus: true %>
+<% end %>
+    <%= button_to t("create_category"), new_admin_category_path, method: :get,
+      class: "btn btn-success" %>
+    <%= link_to t("excel"), params.except(:host, :port, :protocol).permit!.
+      merge(format: "xlsx") %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "index" %></th>
+        <th><%= t "category_name" %></th>
+        <th><%= t "description" %></th>
+        <th><%= t "quantity" %>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= render @categories %>
+    </tbody>
+  </table>
+  </div>
+
+<%= will_paginate %>

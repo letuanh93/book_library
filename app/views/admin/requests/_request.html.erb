@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= index_for request_counter, @requests.current_page, Settings.item_per_page %>
+  </td>
+  <td><%= request.book.title %></td>
+  <td><%= l request.start_date, format: :request_date %></td>
+  <td><%= l request.end_date, format: :request_date %></td>
+  <td><%= request.user.email %></td>
+  <td><%= request.status %></td>
+  <td>
+    <%= form_for [:admin, request], method: :put do |f| %>
+      <%= f.select :status, options_for_select([%w(Accept accepted), %w(Reject rejected)]) %>
+      <%= f.submit t(".save_change"), class: "btn-success btn-xs" %>
+    <% end %>
+  </td>
+</tr>

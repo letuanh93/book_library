@@ -1,0 +1,26 @@
+<% provide :title, t("publishers_list") %>
+<h1><%= t "publishers_list" %></h1>
+<%= form_tag publishers_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: t("search"),
+    class: "form-control search-field" %>
+    <div class="input-group-btn search-btn">
+      <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
+    </div>
+<% end %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "index" %></th>
+        <th><%= t "publisher_name" %></th>
+        <th><%= t "address" %></th>
+        <th><%= t "email" %>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= render @publishers %>
+    </tbody>
+  </table>
+  <%= will_paginate @publishers %>
+</div>

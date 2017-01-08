@@ -1,0 +1,11 @@
+item_per_page: 15
+format:
+  request_date_time_format: "%Y-%m-%d %H-%M"
+  date_time_format: "%Y_%m_%d_%H-%M-%S"
+  picture_size: "60x60"
+specifications:
+  minimum_item: 1
+  maximum_item: 4
+user:
+  item_per_page: 9
+  default_avatar: "http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg"

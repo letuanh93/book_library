@@ -1,0 +1,16 @@
+<tr>
+  <td><%= index_for book_counter , @books.current_page,
+    Settings.item_per_page %></td>
+  <td><%= link_to book.title, admin_book_path(book) %></td>
+  <td><%= book.category.name %></td>
+  <td><%= book.author.name %></td>
+  <td><%= book.publisher.name %></td>
+  <td>
+    <%= link_to edit_admin_book_path book do %>
+      <%= fa_icon "pencil" %>
+    <% end %>
+    <%= link_to [:admin, book], method: :delete, data: {confirm: t("delete.confirm")} do %>
+        <%= fa_icon "trash-o" %>
+    <% end %>
+  </td>
+</tr>

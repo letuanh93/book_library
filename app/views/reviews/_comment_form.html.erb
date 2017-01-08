@@ -1,0 +1,9 @@
+<%= form_for @comment, url: comments_path, method: :post do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.hidden_field :review_id, value: @review.id %>
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control" %>
+
+  <%= f.submit t("comment"), class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,161 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  number_specifications_errors: "A book must containt at least 1  no more than
+    4 specifications."
+  send_request: "Send request"
+  add_author: "Add author"
+  choose: "Choose"
+  request_list: "List Request"
+  profile: "Profile"
+  home: "Home"
+  add_publisher: "Add publisher"
+  comment: "Comment"
+  framgia: "Framgia Libary"
+  unfollow: "Unfollow this user"
+  add_book: "Add book"
+  app_name: "Framgia Libary"
+  publisher_name: "Publisher name"
+  address: "Address"
+  email: "Email"
+  phone_number: "Phone number"
+  follow: "Follow this user"
+  books:
+    show:
+      about_publishser: "About publisher"
+      author_description: "About author"
+      book_description: "About book"
+  categories: "Categories"
+  requests: "Requests"
+  form_contains: "The form contains"
+  error: "errors"
+  comments:
+    create:
+      comment_failed: "Comment errors"
+    form:
+      comment: "Comment"
+  book_are_borrowed: "Book are borrowed by "
+  quantity: "Book quantity"
+  sign_up: "Sign up"
+  login: "Login"
+  edit_author: "Editing author"
+  confirmation: "Password confirmation"
+  welcome_message: "Welcome to Framgia Library"
+  categories_list: "List categories"
+  book_list: "List books"
+  category_name: "Category name"
+  authors_list: "List author"
+  book_title: "Book title"
+  publisher_list: "List publisher"
+  description: "Description"
+  index: "Index"
+  excel: "Export excel file"
+  total: "Total books"
+  books: "Books"
+  categories_file_name: "categories_report_"
+  book_file_name: "books_report_"
+  authors_file_name: "authors_report_"
+  author_name: "Author name"
+  publishers_file_name: "publishers_report_"
+  users_file_name: "users_report_"
+  search: "Search"
+  jumbo_description: "Welcome to Framgia Libary. Please sign up to use our services."
+  delete_success: "Delete successfully!"
+  delete_notice: "This category are using in another operation so you can't delete
+    this"
+  delete_unsucess: "Delete unsuccess because system fail, please contact with
+    your IT Manager"
+  delete:
+    confirm: "Are you sure you want to delete this item"
+  logout: "Logout"
+  create_category: "Create category"
+  time:
+    formats:
+      request_date: "%Y-%m-%d"
+  requests:
+    new:
+      request: "Request"
+    create:
+      request_successfully: "Request sended!"
+  admin:
+    categories:
+      form:
+        create_category: "Create category"
+    publishers:
+      update:
+        edit_publisher: "Edit publisher successfully!"
+    authors:
+      update:
+        edit_author: "Edit author successfully!"
+    books:
+      destroy:
+        delete_book_borrowed: "This book are lending by someone, can't delete this"
+      form:
+        add_book: "Add book"
+      create:
+        book_add_success: "Book added successfully!"
+    users:
+      edit:
+        update_user: "Update User Profile"
+      form:
+        update_user: "Update profile"
+    requests:
+      request:
+        save_change: "Save status"
+  shared:
+    error_messages:
+      contain: "The form contains"
+      error: "error"
+    categories:
+      form:
+        save_changes: "Update category"
+      edit:
+      update:
+        edit_category: "Update category successfully"
+        edit_failed: "Update failed"
+
+  sessions:
+    new:
+      remember_me: "Remember me on this computer?"
+    create:
+      invalid_login: "Invalid password/user combination"
+  users:
+    new:
+      create_account: "Create account"
+  users_review: "Review form users"
+  load_more: "Comment on this"
+  request: "Request for borrow book"
+  confirm_delete: "You sure you want to delete this review"
+  reviews:
+    form:
+      leave_a_review: "Leave a review"
+  user_name: "User Name"
+  joined_date: "Joined Date"
+  action: "Action"
+  add_user: "Add User"
+  user_list: "List user"
+  is_admin: "Is admin?"
+  status: "Status"
+  user: "User"
+  end_date: "End date"
+  start_date: "Start date"

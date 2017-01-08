@@ -1,0 +1,9 @@
+<% unless current_user.nil? %>
+  <% if current_user.liked? book %>
+    <%= link_to "", {controller: "likes", action: "destroy", id: book.id},
+      method: :delete, class: "fa fa-thumbs-up btn-un-like" %>
+  <% else %>
+    <%= link_to "", {controller: "likes", action: "create", id: book.id},
+      method: :post, class: "fa fa-thumbs-o-up btn-like" %>
+  <% end %>
+<% end %>

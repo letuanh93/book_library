@@ -1,0 +1,7 @@
+<tr>
+  <td><%= index_for author_counter, @authors.current_page,
+    Settings.item_per_page %></td>
+  <td><%= author.name %></td>
+  <td><%= author.description %></td>
+  <td><%= author.books.length %></td>
+</tr>

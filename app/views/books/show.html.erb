@@ -1,0 +1,62 @@
+<h1><%= t "book_info" %></h1>
+<hr>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="thumbnail">
+      <img src="http://placehold.it/242x200">
+    </div>
+    <%= form_tag new_request_path, method: :get do %>
+      <%= hidden_field_tag "book_id", @book.id %>
+      <%= button_tag t("request"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="col-sm-9">
+    <div class="thumbnail">
+      <h3 class="text-center"><%= @book.title %></h3>
+      <h4><%= t ".book_description" %></h4>
+      <p><%= @book.description %></p>
+      <h4><%= t ".author_description" %></h4>
+      <p><%= @book.author.description %></p>
+      <h4><%= t".about_publishser" %> : <%= @book.publisher.name %></h4>
+      <p><%= @book.publisher.email %></p>
+      <%= render "likes", book: @book %>
+    </div>
+  </div>
+</div>
+<div class="row">
+ <div class="col-md-6">
+  <span class="avg-head"><%= t "avg_rating" %>: </span>
+    <a class="avg-rating" data-toggle="tooltip"
+      title="<%= pluralize(@book.reviews.count, "review") %>" >
+      <span class="rate-count">
+        <span class="label label-default no-rating">
+          <%= t("no_rating") if @book.avg_rating == 0 %>
+        </span>
+        <% @book.avg_rating.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %>
+      </span>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= render "reviews/form" unless current_user.nil?  %>
+</div>
+</div>
+<h2 class="page-header"><%= t "users_review" %></h2>
+<div class="row">
+  <div class="col-md-11">
+    <div class="reviews">
+      <ul class="review-list">
+        <%= render @reviews %>
+        <ul class="comment-list">
+          <% unless @review.comments.empty? %>
+            <%= render @review.comments %>
+          <% end %>
+        </ul>
+      </ul>
+      <a href="#" id="loadMore"><%= t "load_more" %></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<h3><%= t "write_review" %></h3>
+<%= form_for @review do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div><%= hidden_field_tag :book_id, @book.id %></div>
+  <div class="rate-star">
+    <div id="stars" class="starrr"></div>
+    <%= f.text_field :rate, class: "form-control" %>
+  </div>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control" %>
+
+  <%= f.submit t(".leave_a_review"), class: "btn btn-primary" %>
+<% end %>

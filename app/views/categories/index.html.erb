@@ -1,0 +1,26 @@
+<% provide :title, t("categories_list") %>
+<h1><%= t "categories_list" %></h1>
+<%= form_tag categories_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: t("search"),
+    class: "form-control search-field" %>
+    <div class="input-group-btn search-btn">
+      <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
+    </div>
+<% end %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "index" %></th>
+        <th><%= t "category_name" %></th>
+        <th><%= t "description" %></th>
+        <th><%= t "quantity" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= render @categories %>
+    </tbody>
+  </table>
+  <%= will_paginate @categories %>
+</div>

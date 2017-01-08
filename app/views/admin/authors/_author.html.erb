@@ -1,0 +1,16 @@
+<tr>
+  <td><%= index_for author_counter, @authors.current_page,
+    Settings.item_per_page %></td>
+  <td><%= image_tag author.image.url, size: Settings.format.picture_size if author.image? %></td>
+  <td><%= author.name %></td>
+  <td><%= author.description %></td>
+  <td><%= author.books.length %></td>
+  <td>
+    <%= link_to edit_admin_author_path author do %>
+      <%= fa_icon "pencil" %>
+    <% end %>
+    <%= link_to [:admin, author], method: :delete, data: {confirm: t("delete.confirm")} do %>
+        <%= fa_icon "trash-o" %>
+    <% end %>
+  </td>
+</tr>

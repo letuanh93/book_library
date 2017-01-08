@@ -1,0 +1,16 @@
+<h2 id="sec0"><%= t ".request" %></h2>
+<hr>
+<%= form_for @request do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date, class: "form-control", required: true %>
+  </div>
+  <%= f.hidden_field :book_id, value: @request.book_id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit t(".request"), class: "btn btn-primary" %>
+<% end %>

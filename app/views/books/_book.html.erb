@@ -1,0 +1,9 @@
+<div class="col-md-4 book_cover">
+  <%= link_to book_path book, class: "thumbnail" do %>
+    <img src="http://lorempixel.com/300/300/" class="img-responsive hover">
+  <% end %>
+  <p class="text-center"><%= book.title %></p>
+  <% if logged_in? %>
+    <%= render "likes", book: book %>
+  <% end %>
+</div>

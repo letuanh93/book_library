@@ -1,0 +1,17 @@
+<fieldset>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= f.label :feature_type %>
+      <%= f.text_field :feature_type, class: "form-control", required: true %>
+    </div>
+
+    <div class="col-sm-6">
+      <%= f.label :feature_value %>
+      <%= f.text_field :feature_value, class: "form-control", required: true %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.check_box :_destroy%>
+      <%= t "remove" %>
+    </div>
+  </div>
+</fieldset>

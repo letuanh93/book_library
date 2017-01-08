@@ -1,0 +1,34 @@
+<h2 id="sec0"><%= t "books" %></h2>
+<div class="row">
+  <%= form_tag books_path, method: :get do %>
+    <div class="col-md-6">
+      <%= text_field_tag :search, params[:search], placeholder: t("search"),
+        class: "form-control search-field", autofocus: true %>
+    </div>
+    <div class="col-md-2">
+      <%= select_tag :category_id,
+        options_for_select(@categories.map{|c| [c.name, c.id]},
+        selected: params[:category_id]), class: "form-control",
+        include_blank: t("all_categories") %>
+    </div>
+    <div class="col-md-2">
+      <%= select_tag :author_id,
+        options_for_select(@authors.map{|c| [c.name, c.id]},
+        selected: params[:author_id]), class: "form-control",
+        include_blank: t("all_authors") %>
+    </div>
+    <div class="col-md-2">
+      <%= select_tag :publisher_id,
+        options_for_select(@publishers.map{|c| [c.name, c.id]},
+        selected: params[:publisher_id]), class: "form-control",
+        include_blank: t("all_publishers") %>
+    </div>
+  <% end %>
+</div>
+<hr>
+<div class="row">
+  <%= render @books %>
+</div>
+
+<%= will_paginate %>
+

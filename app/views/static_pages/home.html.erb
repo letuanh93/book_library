@@ -1,0 +1,13 @@
+<h2 id="sec0"><%= t "framgia" %></h2>
+<hr>
+<div class="jumbotron">
+  <% if current_user.nil? %>
+    <div class="container">
+      <h1><%= t "framgia" %></h1>
+      <p><%= t "jumbo_description" %></p>
+      <p><%= link_to t("sign_up"), signup_path , class: "btn btn-primary btn-lg" %></p>
+    </div>
+  <% else %>
+    <h1><%= t "welcome" %> <%= current_user.name %></h1>
+  <% end %>
+</div>

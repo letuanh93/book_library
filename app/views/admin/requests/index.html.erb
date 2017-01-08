@@ -1,0 +1,22 @@
+<% provide :title, t("request_list") %>
+<h1><%= t "request_list" %></h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "index" %></th>
+        <th><%= t "book_title" %></th>
+        <th><%= t "start_date" %></th>
+        <th><%= t "end_date" %></th>
+        <th><%= t "user" %></th>
+        <th><%= t "status" %></th>
+        <th><%= t "action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @requests %>
+    </tbody>
+  </table>
+  </div>
+
+<%= will_paginate %>

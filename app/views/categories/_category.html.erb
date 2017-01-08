@@ -1,0 +1,7 @@
+<tr>
+  <td><%= index_for category_counter, @categories.current_page,
+    Settings.item_per_page %></td>
+  <td><%= category.name %></td>
+  <td><%= category.description %></td>
+  <td><%= category.books.length %></td>
+</tr>
